@@ -1,6 +1,6 @@
 import os
 
-def print_tree_structure(directory, omit_dirs=['.venv'], prefix=""):
+def print_tree_structure(directory, omit_dirs=[".venv", ".pytest_cache", "__pycache__"], prefix=""):
     """Prints the tree structure of files and directories in the specified format."""
 
     # Get the list of files and directories
@@ -23,7 +23,7 @@ def print_tree_structure(directory, omit_dirs=['.venv'], prefix=""):
         else:
             print(f"{prefix}{connector}{entry}")
 
-def print_file_contents(directory, omit_dirs=['.venv'] , max_file_length=None):
+def print_file_contents(directory, omit_dirs=[".venv", ".pytest_cache", "__pycache__"] , max_file_length=None):
     """Prints the content of each file, skipping files larger than max_file_length."""
 
     for root, dirs, files in os.walk(directory):
